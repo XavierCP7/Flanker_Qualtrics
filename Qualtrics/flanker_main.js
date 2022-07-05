@@ -3,10 +3,10 @@
 
 <head>
   <title>Flanker Task</title>
-  <script src="Flanker_Qualtrics/jspsych.js"></script>
-  <script src="Flanker_Qualtrics/plugins/jspsych-html-keyboard-response.js"></script>
-  <script src="Flanker_Qualtrics/plugins/jspsych-image-keyboard-response.js"></script>
-  <link rel="stylesheet" href="Flanker_Qualtrics/css/jspsych.css">
+  <script src="Flanker_Qualtrics/Qualtrics/jspsych.js"></script>
+  <script src="Flanker_Qualtrics/Qualtrics/plugins/jspsych-html-keyboard-response.js"></script>
+  <script src="Flanker_Qualtrics/Qualtrics/plugins/jspsych-image-keyboard-response.js"></script>
+  <link rel="stylesheet" href="Flanker_Qualtrics/Qualtrics/css/jspsych.css">
 </head>
 
 <body>
