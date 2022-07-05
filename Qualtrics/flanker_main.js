@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Flanker Task</title>
-  <script src="Flanker_Qualtrics/Qualtrics/jspsych.js"></script>
-  <script src="Flanker_Qualtrics/Qualtrics/plugins/jspsych-html-keyboard-response.js"></script>
-  <script src="Flanker_Qualtrics/Qualtrics/plugins/jspsych-image-keyboard-response.js"></script>
-  <link rel="stylesheet" href="Flanker_Qualtrics/Qualtrics/css/jspsych.css">
-</head>
-
-<body>
-</body>
-<script>
-    
-  var repo_site = "https://cdn.jsdelivr.net/gh/XavierCP7/Flanker_Qualtrics/Qualtrics/"  
+   var repo_site = "https://cdn.jsdelivr.net/gh/XavierCP7/Flanker_Qualtrics/Qualtrics/"  
     
   /* experiment parameters */
   var reps_per_trial_type = 4;
