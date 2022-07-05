@@ -14,9 +14,9 @@
     type: "html-keyboard-response",
     stimulus: "<p>Dans cette tâche, tu verras apparaitre cinq flèches à l’écran. Exactement comme l’exemple que tu viens d’avoir.</p>" +
       "<img src='img/inc1.png'></img>" +
-      "<p>Pèse la flèche de gauche sur ton clavier si la flèche à l’écran pointe à gauche. (<)</p>" +
-      "<p>Pèse la flèche de droite sur ton clavier si la flèche à l’écran pointe à droite. (>)</p>" +
-      "<p>Pèse n’importe quelle touche lorsque tu es prêt à commencer.</p>",
+      "<p>Appui sur la flèche gauche de ton clavier si la flèche à l’écran pointe à gauche. (<)</p>" +
+      "<p>Appui sur la flèche droite de ton clavier si la flèche à l’écran pointe à droite. (>)</p>" +
+      "<p>Appui sur n’importe quelle touche de ton clavier lorsque tu es prêt à commencer.</p>",
     post_trial_gap: 1000
   };
 
