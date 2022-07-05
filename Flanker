@@ -3,9 +3,9 @@
 
 <head>
   <title>Flanker Task</title>
-  <script src="jspsych-6.1.0/jspsych.js"></script>
-  <script src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
-  <script src="jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script>
+  <script src="Flanker_Qualtrics/jspsych.js"></script>
+  <script src="Flanker_Qualtrics/plugins/jspsych-html-keyboard-response.js"></script>
+  <script src="Flanker_Qualtrics/plugins/jspsych-image-keyboard-response.js"></script>
   <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css">
 </head>
 
@@ -24,11 +24,11 @@
   /*set up instructions block*/
   var instructions = {
     type: "html-keyboard-response",
-    stimulus: "<p>In this task, you will see five arrows on the screen, like the example below.</p>" +
+    stimulus: "<p>Dans cette tâche, tu verras apparaitre cinq flèches à l’écran. Exactement comme l’exemple que tu viens d’avoir.</p>" +
       "<img src='img/inc1.png'></img>" +
-      "<p>Press the left arrow key if the middle arrow is pointing left. (<)</p>" +
-      "<p>Press the right arrow key if the middle arrow is pointing right. (>)</p>" +
-      "<p>Press any key to begin.</p>",
+      "<p>Pèse la flèche de gauche sur ton clavier si la flèche à l’écran pointe à gauche. (<)</p>" +
+      "<p>Pèse la flèche de droite sur ton clavier si la flèche à l’écran pointe à droite. (>)</p>" +
+      "<p>Pèse n’importe quelle touche lorsque tu es prêt à commencer.</p>",
     post_trial_gap: 1000
   };
 
