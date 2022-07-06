@@ -148,24 +148,12 @@
 /* defining testP timeline */
   var testP = {
     timeline: [{
-      type: 'trial',
+      type: 'html-keyboard-response',
       choices: [37, 39],
       trial_duration: 1500,
       stimulus: jsPsych.timelineVariable('stimulus'),
-      data: jsPsych.timelineVariable('data'),
-      on_finish: function (data) {
-        var correct = false;
-        if (data.direction == 'left' && data.key_press == 37 && data.rt > -1) {
-          correct = true;
-        } else if (data.direction == 'right' && data.key_press == 39 && data.rt > -1) {
-          correct = true;
-        }
-        data.correct = correct;
-      },
-      post_trial_gap: function () {
-        return Math.floor(Math.random() * 1500) + 500;
-      }
-    }],
+      data: jsPsych.timelineVariable('data')
+     }],
     timeline_variables: test_stimuli_p,
     sample: {
       type: 'fixed-repetitions',
@@ -255,7 +243,7 @@
   var debrief = {
     type: "html-keyboard-response",
     stimulus: function () {
-      var total_trials = jsPsych.data.get().filter({
+      var total_trials = jsPsych.data.getDataByTimelineNode().filter({
         trial_type: 'image-keyboard-response'
       }).count();
       var accuracy = Math.round(jsPsych.data.get().filter({
