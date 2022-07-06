@@ -153,15 +153,6 @@ var testP = {
       trial_duration: 1500,
       stimulus: jsPsych.timelineVariable('stimulus'),
       data: jsPsych.timelineVariable('data'),
-      on_finish: function (data) {
-        var correct = false;
-        if (data.direction == 'left' && data.key_press == 37 && data.rt > -1) {
-          correct = true;
-        } else if (data.direction == 'right' && data.key_press == 39 && data.rt > -1) {
-          correct = true;
-        }
-        data.correct = correct;
-      },
       post_trial_gap: function () {
         return Math.floor(Math.random() * 1500) + 500;
       }
