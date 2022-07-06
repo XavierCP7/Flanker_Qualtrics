@@ -146,9 +146,9 @@
     post_trial_gap: 1000
   };
 /* defining testP timeline */
-  var testP = {
+var testP = {
     timeline: [{
-      type: 'html-keyboard-response',
+      type: 'image-keyboard-response',
       choices: [37, 39],
       trial_duration: 1500,
       stimulus: jsPsych.timelineVariable('stimulus'),
@@ -165,8 +165,7 @@
       post_trial_gap: function () {
         return Math.floor(Math.random() * 1500) + 500;
       }
-    
-     }],
+    }],
     timeline_variables: test_stimuli_p,
     sample: {
       type: 'fixed-repetitions',
