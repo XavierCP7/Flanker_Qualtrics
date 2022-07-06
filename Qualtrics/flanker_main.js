@@ -172,6 +172,30 @@
       size: reps_per_trial_type_p
     }
   };
+ /*defining debriefing block*/
+  var debriefp = {
+    type: "html-keyboard-response",
+    stimulus: function () {
+      var total_trials = jsPsych.data.get().filter({
+        trial_type: 'image-keyboard-response'
+      }).count();
+      var accuracy = Math.round(jsPsych.data.get().filter({
+        correct: true
+      }).count() / total_trials * 100);
+      var congruent_rt = Math.round(jsPsych.data.get().filter({
+        correct: true,
+        stim_type: 'congruentp'
+      }).select('rt').mean());
+      var incongruent_rt = Math.round(jsPsych.data.get().filter({
+        correct: true,
+        stim_type: 'incongruentp'
+      }).select('rt').mean());
+      return "<p>You responded correctly on <strong>" + accuracy + "%</strong> of the trials.</p> " +
+        "<p>Your average response time for congruent trials was <strong>" + congruent_rt + "ms</strong>.</p>" +
+        "<p>Your average response time for incongruent trials was <strong>" + incongruent_rt + "ms</strong>.</p>" +
+        "<p>Press any key to complete the experiment. Thank you!</p>";
+    }
+  };
 
   /*set up instructions1 block*/
   var instructions1 = {
@@ -281,7 +305,7 @@
   timeline.push(welcome);
   timeline.push(instructionsP);
   timeline.push(testP);
-  timeline.push(debrief);
+  timeline.push(debriefp);
   timeline.push(instructions1);
   timeline.push(test1);
   timeline.push(instructions2);
