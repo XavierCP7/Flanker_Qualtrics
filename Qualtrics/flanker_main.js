@@ -17,19 +17,19 @@
   var test_stimuli_p = [
     {
       stimulus: "img/con1.png",
-      data: { stim_type: 'congruentp', direction: 'left'}
+      data: { stim_type: 'congruentp', direction: 'leftp'}
     },
     {
       stimulus: "img/con2.png",
-      data: { stim_type: 'congruentp', direction: 'right'}
+      data: { stim_type: 'congruentp', direction: 'rightp'}
     },
     {
       stimulus: "img/inc1.png",
-      data: { stim_type: 'incongruentp', direction: 'right'}
+      data: { stim_type: 'incongruentp', direction: 'rightp'}
     },
     {
       stimulus: "img/inc2.png",
-      data: { stim_type: 'incongruentp', direction: 'left'}
+      data: { stim_type: 'incongruentp', direction: 'leftp'}
     }
   ];
 /*defining stimuli*/
@@ -151,13 +151,13 @@
       type: 'image-keyboard-response',
       choices: [37, 39],
       trial_duration: 1500,
-      stimulus: jsPsych.timelineVariable('stimulus'),
-      data: jsPsych.timelineVariable('data'),
+      stimulus: jsPsych.timelineVariable('stimulusp'),
+      data: jsPsych.timelineVariable('datap'),
       on_finish: function (data) {
         var correct = false;
-        if (data.direction == 'left' && data.key_press == 37 && data.rt > -1) {
+        if (data.direction == 'leftp' && data.key_press == 37 && data.rt > -1) {
           correct = true;
-        } else if (data.direction == 'right' && data.key_press == 39 && data.rt > -1) {
+        } else if (data.direction == 'rightp' && data.key_press == 39 && data.rt > -1) {
           correct = true;
         }
         data.correct = correct;
