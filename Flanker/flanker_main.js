@@ -1,4 +1,4 @@
-  var repo_site = "https://cdn.jsdelivr.net/gh/XavierCP7/Qualtrics/Flanker/"  
+  var repo_site = "https://cdn.jsdelivr.net/gh/XavierCP7/Qualtrics@1/Flanker/"; 
     
   /* experiment parameters */
   var reps_per_trial_type_p = 1;
@@ -7,134 +7,9 @@
   /*set up welcome block*/
   var welcome = {
     type: "html-keyboard-response",
-    stimulus: "Flanker"
-     
+    stimulus: "Flanker" 
   };
 
-
-
-  /*defining stimuli*/
-  var test_stimuli_p = [
-    {
-      stimulus: "img/con1.png",
-      data: { stim_type: 'congruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/con2.png",
-      data: { stim_type: 'congruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/inc1.png",
-      data: { stim_type: 'incongruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/inc2.png",
-      data: { stim_type: 'incongruent', direction: 'left'}
-    }
-  ];
-/*defining stimuli*/
-  var test_stimuli_t = [
-      {
-      stimulus: "img/con1.png",
-      data: { stim_type: 'congruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/con1.png",
-      data: { stim_type: 'congruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/con1.png",
-      data: { stim_type: 'congruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/con1.png",
-      data: { stim_type: 'congruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/con1.png",
-      data: { stim_type: 'congruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/con1.png",
-      data: { stim_type: 'congruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/con1.png",
-      data: { stim_type: 'congruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/con1.png",
-      data: { stim_type: 'congruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/con2.png",
-      data: { stim_type: 'congruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/con2.png",
-      data: { stim_type: 'congruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/con2.png",
-      data: { stim_type: 'congruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/con2.png",
-      data: { stim_type: 'congruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/con2.png",
-      data: { stim_type: 'congruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/con2.png",
-      data: { stim_type: 'congruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/con2.png",
-      data: { stim_type: 'congruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/con2.png",
-      data: { stim_type: 'congruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/inc1.png",
-      data: { stim_type: 'incongruent', direction: 'right'}
-    },
-     {
-      stimulus: "img/inc1.png",
-      data: { stim_type: 'incongruent', direction: 'right'}
-    },
-     {
-      stimulus: "img/inc1.png",
-      data: { stim_type: 'incongruent', direction: 'right'}
-    },
-     {
-      stimulus: "img/inc1.png",
-      data: { stim_type: 'incongruent', direction: 'right'}
-    },
-    {
-      stimulus: "img/inc2.png",
-      data: { stim_type: 'incongruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/inc2.png",
-      data: { stim_type: 'incongruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/inc2.png",
-      data: { stim_type: 'incongruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/inc2.png",
-      data: { stim_type: 'incongruent', direction: 'left'}
-    },
-    {
-      stimulus: "img/inc2.png",
-      data: { stim_type: 'incongruent', direction: 'left'}
-    }
-  ];
 /*set up instructionsP block*/
   var instructionsP = {
     type: "html-keyboard-response",
@@ -145,6 +20,27 @@
       "<p>Lorsque tu es prêt, appui sur n’importe quelle touche de ton clavier pour commencer un essai de pratique.</p>",
     post_trial_gap: 1000
   };
+
+  /*defining stimuli*/
+  var test_stimuli_p = [
+    {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/inc1.png",
+      data: { stim_type: 'incongruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/inc2.png",
+      data: { stim_type: 'incongruent', direction: 'left'}
+    }
+  ];
+
 /* defining testP timeline */
 var testP = {
     timeline: [{
@@ -174,6 +70,109 @@ var testP = {
       "<p>Appui sur n’importe quelle touche de ton clavier lorsque tu es prêt à commencer le vrai test.</p>",
     post_trial_gap: 1000
   };
+/*defining stimuli*/
+  var test_stimuli_t = [
+      {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/inc1.png",
+      data: { stim_type: 'incongruent', direction: 'right'}
+    },
+     {
+      stimulus: repo_site + "img/inc1.png",
+      data: { stim_type: 'incongruent', direction: 'right'}
+    },
+     {
+      stimulus: repo_site + "img/inc1.png",
+      data: { stim_type: 'incongruent', direction: 'right'}
+    },
+     {
+      stimulus: repo_site + "img/inc1.png",
+      data: { stim_type: 'incongruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/inc2.png",
+      data: { stim_type: 'incongruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/inc2.png",
+      data: { stim_type: 'incongruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/inc2.png",
+      data: { stim_type: 'incongruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/inc2.png",
+      data: { stim_type: 'incongruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/inc2.png",
+      data: { stim_type: 'incongruent', direction: 'left'}
+    }
+  ];
 
   /* defining test1 timeline */
   var test1 = {
