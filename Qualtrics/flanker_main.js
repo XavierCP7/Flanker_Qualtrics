@@ -152,7 +152,20 @@
       choices: [37, 39],
       trial_duration: 1500,
       stimulus: jsPsych.timelineVariable('stimulus'),
-      data: jsPsych.timelineVariable('data')
+      data: jsPsych.timelineVariable('data'),
+      on_finish: function (data) {
+        var correct = false;
+        if (data.direction == 'left' && data.key_press == 37 && data.rt > -1) {
+          correct = true;
+        } else if (data.direction == 'right' && data.key_press == 39 && data.rt > -1) {
+          correct = true;
+        }
+        data.correct = correct;
+      },
+      post_trial_gap: function () {
+        return Math.floor(Math.random() * 1500) + 500;
+      }
+    
      }],
     timeline_variables: test_stimuli_p,
     sample: {
@@ -243,17 +256,17 @@
   var debrief = {
     type: "html-keyboard-response",
     stimulus: function () {
-      var total_trials = jsPsych.data.get().filter({
+      var total_trials = jsPsych.data.get().ignore('testP').filter({
         trial_type: 'image-keyboard-response'
       }).count();
-      var accuracy = Math.round(jsPsych.data.get().filter({
+      var accuracy = Math.round(jsPsych.data.get().ignore('testP').filter({
         correct: true
       }).count() / total_trials * 100);
-      var congruent_rt = Math.round(jsPsych.data.get().filter({
+      var congruent_rt = Math.round(jsPsych.data.get().ignore('testP').filter({
         correct: true,
         stim_type: 'congruent'
       }).select('rt').mean());
-      var incongruent_rt = Math.round(jsPsych.data.get().filter({
+      var incongruent_rt = Math.round(jsPsych.data.get().ignore('testP').filter({
         correct: true,
         stim_type: 'incongruent'
       }).select('rt').mean());
