@@ -12,7 +12,6 @@
   };
 
 
-
   /*defining stimuli*/
   var test_stimuli_p = [
     {
@@ -145,28 +144,34 @@
       "<p>Lorsque tu es prêt, appui sur n’importe quelle touche de ton clavier pour commencer un essai de pratique.</p>",
     post_trial_gap: 1000
   };
- /*defining debriefing block*/
-  var debriefp = {
-    type: "html-keyboard-response",
-    stimulus: function () {
-      var total_trials = jsPsych.data.get().filter({
-        trial_type: 'image-keyboard-response'
-      }).count();
-      var accuracy = Math.round(jsPsych.data.get().filter({
-        correct: true
-      }).count() / total_trials * 100);
-      var congruent_rt = Math.round(jsPsych.data.get().filter({
-        correct: true,
-        stim_type: 'congruentp'
-      }).select('rt').mean());
-      var incongruent_rt = Math.round(jsPsych.data.get().filter({
-        correct: true,
-        stim_type: 'incongruentp'
-      }).select('rt').mean());
-      return "<p>You responded correctly on <strong>" + accuracy + "%</strong> of the trials.</p> " +
-        "<p>Your average response time for congruent trials was <strong>" + congruent_rt + "ms</strong>.</p>" +
-        "<p>Your average response time for incongruent trials was <strong>" + incongruent_rt + "ms</strong>.</p>" +
-        "<p>Press any key to complete the experiment. Thank you!</p>";
+
+    }
+  };
+/* defining testp timeline */
+  var testp = {
+    timeline: [{
+      type: 'image-keyboard-response',
+      choices: [37, 39],
+      trial_duration: 1500,
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      data: jsPsych.timelineVariable('data'),
+      on_finish: function (data) {
+        var correct = false;
+        if (data.direction == 'left' && data.key_press == 37 && data.rt > -1) {
+          correct = true;
+        } else if (data.direction == 'right' && data.key_press == 39 && data.rt > -1) {
+          correct = true;
+        }
+        data.correct = correct;
+      },
+      post_trial_gap: function () {
+        return Math.floor(Math.random() * 1500) + 500;
+      }
+    }],
+    timeline_variables: test_stimuli_p,
+    sample: {
+      type: 'fixed-repetitions',
+      size: reps_per_trial_type_p
     }
   };
 
