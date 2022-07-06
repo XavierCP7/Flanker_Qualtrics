@@ -1,7 +1,7 @@
    var repo_site = "https://cdn.jsdelivr.net/gh/XavierCP7/Flanker_Qualtrics/Qualtrics/"  
     
   /* experiment parameters */
-  var reps_per_trial_type = 10;
+  var reps_per_trial_type = 4;
 
   /*set up welcome block*/
   var welcome = {
@@ -9,16 +9,7 @@
     stimulus: "Welcome to the experiment. Press any key to begin."
   };
 
-  /*set up instructions block*/
-  var instructions = {
-    type: "html-keyboard-response",
-    stimulus: "<p>Dans cette tâche, tu verras apparaitre cinq flèches à l’écran. Exactement comme l’exemple que tu viens d’avoir.</p>" +
-      "<img src='img/inc1.png'></img>" +
-      "<p>Appui sur la flèche gauche de ton clavier si la flèche à l’écran pointe à gauche. (<)</p>" +
-      "<p>Appui sur la flèche droite de ton clavier si la flèche à l’écran pointe à droite. (>)</p>" +
-      "<p>Appui sur n’importe quelle touche de ton clavier lorsque tu es prêt à commencer.</p>",
-    post_trial_gap: 1000
-  };
+
 
   /*defining stimuli*/
   var test_stimuli = [
@@ -40,8 +31,58 @@
     }
   ];
 
-  /* defining test timeline */
-  var test = {
+  /*set up instructions1 block*/
+  var instructions1 = {
+    type: "html-keyboard-response",
+    stimulus: "<p>Dans cette tâche, tu verras apparaitre cinq flèches à l’écran. Exactement comme l’exemple que tu viens d’avoir.</p>" +
+      "<img src='img/inc1.png'></img>" +
+      "<p>Appui sur la flèche gauche de ton clavier si la flèche à l’écran pointe à gauche. (<)</p>" +
+      "<p>Appui sur la flèche droite de ton clavier si la flèche à l’écran pointe à droite. (>)</p>" +
+      "<p>Appui sur n’importe quelle touche de ton clavier lorsque tu es prêt à commencer.</p>",
+    post_trial_gap: 1000
+  };
+
+  /* defining test1 timeline */
+  var test1 = {
+    timeline: [{
+      type: 'image-keyboard-response',
+      choices: [37, 39],
+      trial_duration: 1500,
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      data: jsPsych.timelineVariable('data'),
+      on_finish: function (data) {
+        var correct = false;
+        if (data.direction == 'left' && data.key_press == 37 && data.rt > -1) {
+          correct = true;
+        } else if (data.direction == 'right' && data.key_press == 39 && data.rt > -1) {
+          correct = true;
+        }
+        data.correct = correct;
+      },
+      post_trial_gap: function () {
+        return Math.floor(Math.random() * 1500) + 500;
+      }
+    }],
+    timeline_variables: test_stimuli,
+    sample: {
+      type: 'fixed-repetitions',
+      size: reps_per_trial_type
+    }
+  };
+
+  /*set up instructions2 block*/
+  var instructions2 = {
+    type: "html-keyboard-response",
+    stimulus: "<p>Maintenant, refait la même chose une 2e fois!</p>" +
+      "<img src='img/inc1.png'></img>" +
+      "<p>Appui sur la flèche gauche de ton clavier si la flèche à l’écran pointe à gauche. (<)</p>" +
+      "<p>Appui sur la flèche droite de ton clavier si la flèche à l’écran pointe à droite. (>)</p>" +
+      "<p>Appui sur n’importe quelle touche de ton clavier lorsque tu es prêt à commencer.</p>",
+    post_trial_gap: 1000
+  };
+
+ /* defining test2 timeline */
+  var test2 = {
     timeline: [{
       type: 'image-keyboard-response',
       choices: [37, 39],
@@ -96,6 +137,8 @@
   /*set up experiment structure*/
   var timeline = [];
   timeline.push(welcome);
-  timeline.push(instructions);
-  timeline.push(test);
+  timeline.push(instructions1);
+  timeline.push(test1);
+  timeline.push(instructions2);
+  timeline.push(test2);
   timeline.push(debrief);
