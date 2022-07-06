@@ -89,7 +89,7 @@
     }
   };
 /*defining debriefing block*/
-  var debrief = {
+  var debriefp = {
     type: "html-keyboard-response",
     stimulus: function () {
       var total_trials = jsPsych.data.get().filter({
