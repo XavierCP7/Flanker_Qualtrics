@@ -11,7 +11,6 @@
      
   };
 
-
   /*defining stimuli*/
   var test_stimuli_p = [
     {
