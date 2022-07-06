@@ -1,4 +1,4 @@
-  var repo_site = "https://cdn.jsdelivr.net/gh/XavierCP7/Qualtrics/Flanker/"  
+  var repo_site = "https://cdn.jsdelivr.net/gh/XavierCP7/Qualtrics@Flanker/Flanker/"  
     
   /* experiment parameters */
   var reps_per_trial_type_p = 1;
