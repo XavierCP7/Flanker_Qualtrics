@@ -148,7 +148,7 @@
 /* defining testP timeline */
   var testP = {
     timeline: [{
-      type: 'image-keyboard-response',
+      type: 'trial',
       choices: [37, 39],
       trial_duration: 1500,
       stimulus: jsPsych.timelineVariable('stimulus'),
