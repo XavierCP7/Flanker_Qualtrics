@@ -255,21 +255,20 @@
   var debrief = {
     type: "html-keyboard-response",
     stimulus: function () {
-      var n = 2
       var total_trials = jsPsych.data.get().filter({
         trial_type: 'image-keyboard-response'
-      }).last(n).count();
+      }).count();
       var accuracy = Math.round(jsPsych.data.get().filter({
         correct: true
-      }).last(n).count() / total_trials * 100);
+      }).count() / total_trials * 100);
       var congruent_rt = Math.round(jsPsych.data.get().filter({
         correct: true,
         stim_type: 'congruent'
-      }).last(n).select('rt').mean());
+      }).select('rt').mean());
       var incongruent_rt = Math.round(jsPsych.data.get().filter({
         correct: true,
         stim_type: 'incongruent'
-      }).last(n).select('rt').mean());
+      }).select('rt').mean());
       return "<p>You responded correctly on <strong>" + accuracy + "%</strong> of the trials.</p> " +
         "<p>Your average response time for congruent trials was <strong>" + congruent_rt + "ms</strong>.</p>" +
         "<p>Your average response time for incongruent trials was <strong>" + incongruent_rt + "ms</strong>.</p>" +
