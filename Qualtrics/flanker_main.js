@@ -278,7 +278,6 @@
   timeline.push(welcome);
   timeline.push(instructionsP);
   timeline.push(testP);
-  timeline.push(debriefp);
   timeline.push(instructions1);
   timeline.push(test1);
   timeline.push(instructions2);
