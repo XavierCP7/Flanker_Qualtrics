@@ -7,8 +7,7 @@
   /*set up welcome block*/
   var welcome = {
     type: "html-keyboard-response",
-    stimulus: "Flanker"
-     
+    stimulus: "Flanker" 
   };
 
 /*set up instructionsP block*/
