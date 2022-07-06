@@ -145,8 +145,7 @@
     post_trial_gap: 1000
   };
 
-    }
-  };
+
 /* defining testp timeline */
   var testp = {
     timeline: [{
