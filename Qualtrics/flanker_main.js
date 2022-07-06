@@ -255,7 +255,7 @@
   var debrief = {
     type: "html-keyboard-response",
     stimulus: function () {
-      var total_trials = jsPsych.data.get().filter({
+      var total_trials = jsPsych.data.getDataByTimelineNode(test1, test2).filter({
         trial_type: 'image-keyboard-response'
       }).count();
       var accuracy = Math.round(jsPsych.data.get().filter({
