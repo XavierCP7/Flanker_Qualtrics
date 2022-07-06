@@ -7,8 +7,8 @@
   /*set up welcome block*/
   var welcome = {
     type: "html-keyboard-response",
-    stimulus: "<p>Flanker</p>"
-     "<p>appui sur n’importe quelle touche de ton clavier pour commencer.</p>"
+    stimulus: "Flanker"
+     
   };
 
 
