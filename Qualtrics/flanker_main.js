@@ -17,19 +17,19 @@
   var test_stimuli_p = [
     {
       stimulus: "img/con1.png",
-      data: { stim_type: 'congruentp', direction: 'left'}
+      data: { stim_type: 'congruent', direction: 'left'}
     },
     {
       stimulus: "img/con2.png",
-      data: { stim_type: 'congruentp', direction: 'right'}
+      data: { stim_type: 'congruent', direction: 'right'}
     },
     {
       stimulus: "img/inc1.png",
-      data: { stim_type: 'incongruentp', direction: 'right'}
+      data: { stim_type: 'incongruent', direction: 'right'}
     },
     {
       stimulus: "img/inc2.png",
-      data: { stim_type: 'incongruentp', direction: 'left'}
+      data: { stim_type: 'incongruent', direction: 'left'}
     }
   ];
 /*defining stimuli*/
