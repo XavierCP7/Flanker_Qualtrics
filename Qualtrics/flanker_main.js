@@ -88,28 +88,7 @@
       size: reps_per_trial_type_p
     }
   };
-/*defining debriefing block*/
-  var debriefp = {
-    type: "html-keyboard-response",
-    stimulus: function () {
-      var total_trials = jsPsych.data.get().filter({
-        trial_type: 'image-keyboard-response'
-      }).count();
-      var accuracy = Math.round(jsPsych.data.get().filter({
-        correct: true
-      }).count() / total_trials * 100);
-      var congruent_rt = Math.round(jsPsych.data.get().filter({
-        correct: true,
-        stim_type: 'congruentp'
-      }).select('rt').mean());
-      var incongruent_rt = Math.round(jsPsych.data.get().filter({
-        correct: true,
-        stim_type: 'incongruentp'
-      }).select('rt').mean());
-      return "<p>Tu as répondu correctement à <strong>" + accuracy + "%</strong> des essais.</p> " +
-        "<p>Lorsque tu es prêt, appui sur n’importe quelle touche de ton clavier pour terminer la pratique.</p>";
-    }
-  };
+
   /*set up instructions1 block*/
   var instructions1 = {
     type: "html-keyboard-response",
@@ -218,7 +197,6 @@
   timeline.push(welcome);
   timeline.push(instructionsP);
   timeline.push(testP);
-  timeline.push(debriefp)
   timeline.push(instructions1);
   timeline.push(test1);
   timeline.push(instructions2);
