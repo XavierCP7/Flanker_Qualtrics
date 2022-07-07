@@ -11,7 +11,7 @@
   <script>
     var timeline = [];
 
-    var n_back_set = ['Z', 'X', 'C', 'V', 'B', 'N'];
+    var n_back_set = ['q', 'w', 'r', 't', 'y', 'p', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'c', 'v', 'b', 'n', 'm'];
     var sequence = [];
 
     var how_many_back = 2;
@@ -20,21 +20,26 @@
 
     /* Instructions */
 
-    var instructions_1 = {
+    var instructions_general = {
       type: 'html-button-response',
       stimulus: '<div style="width: 800px;">'+
-        '<p>This experiment will test your ability to hold information in short-term, temporary memory. This is called working memory.</p>'+
+      '<p>Cette expérience testera votre habileté à retenir de l’information pendant un court moment en mémoire.'+ 
+      '<p>Cette habileté s’appelle la mémoire de travail.</p>'+
+      "<p>Tu vas voir apparaître des lettres à l'écran. Les lettres apparaîtront une à la fois. Pour chaque lettre, tu devras dire si c'est la bonne réponse ou non"
+      "Les consignes t'expliqueront quand une lettre est la bonne réponse."
+      "Une pratique te permettra de bien comprendre."
         '</div>',
       choices: ["Continue"]
     }
-    timeline.push(instructions_1);
+    timeline.push(instructions_general );
 
-    var instructions_2 = {
+    var instructions_two_back = {
       type: 'html-button-response',
       stimulus: '<div style="width: 800px;">'+
-        '<p>You will see a sequence of letters presented one at a time. Your task is to determine if the letter on the screen matches '+
-        'the letter that appeared two letters before.</p>'+
-        '<p>If the letter is match <span style="font-weight: bold;">press the M key.</span></p>'+
+        '<p>Tu vas voir apparaître des lettres à l'écran. Les lettres apparaîtront une à la fois. Pour chaque lettre, tu devras dire si c'est la bonne réponse ou non'+
+        "Quand la lettre qui apparaît à l'écran est la même que celle affichée il y a DEUX lettres, tu dois appuyer sur OUI."</p>'+
+        '<p>Pour appuyer sur OUI, tu dois utiliser <span style="font-weight: bold;">la touche Y de ton clavier.</span></p>'+
+        "Clique sur SUIVANT pour voir un exemple.",
         '<p>For example, if you saw the sequence X, C, V, B, V, X you would press the M key when the second V appeared on the screen.</p>'+
         '<p>You do not need to press any key when there is not a match.</p>'+
         '</div>',
