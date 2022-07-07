@@ -14,7 +14,7 @@
   var instructionsP = {
     type: "html-keyboard-response",
     stimulus: "<p>Dans cette tâche, tu verras apparaitre cinq flèches à l’écran. Exactement comme l’exemple que tu viens d’avoir.</p>" +
-      "<img src='img/inc1.png'></img>" +
+      "<img src= repo_site +'img/inc1.png'></img>" +
       "<p>Appui sur la flèche gauche de ton clavier si la flèche à l’écran pointe à gauche. (<)</p>" +
       "<p>Appui sur la flèche droite de ton clavier si la flèche à l’écran pointe à droite. (>)</p>" +
       "<p>Lorsque tu es prêt, appui sur n’importe quelle touche de ton clavier pour commencer un essai de pratique.</p>",
@@ -64,7 +64,7 @@ var testP = {
   var instructions1 = {
     type: "html-keyboard-response",
     stimulus: "<p>Dans cette tâche, tu verras apparaitre cinq flèches à l’écran. Exactement comme l’exemple que tu viens d’avoir.</p>" +
-      "<img src='img/inc1.png'></img>" +
+      "<img src= repo_site + 'img/inc1.png'></img>" +
       "<p>Appui sur la flèche gauche de ton clavier si la flèche à l’écran pointe à gauche. (<)</p>" +
       "<p>Appui sur la flèche droite de ton clavier si la flèche à l’écran pointe à droite. (>)</p>" +
       "<p>Appui sur n’importe quelle touche de ton clavier lorsque tu es prêt à commencer le vrai test.</p>",
@@ -206,7 +206,7 @@ var testP = {
   var instructions2 = {
     type: "html-keyboard-response",
     stimulus: "<p>Maintenant, refait la même chose une 2e fois!</p>" +
-      "<img src='img/inc1.png'></img>" +
+      "<img src= repo_site + 'img/inc1.png'></img>" +
       "<p>Appui sur la flèche gauche de ton clavier si la flèche à l’écran pointe à gauche. (<)</p>" +
       "<p>Appui sur la flèche droite de ton clavier si la flèche à l’écran pointe à droite. (>)</p>" +
       "<p>Appui sur n’importe quelle touche de ton clavier lorsque tu es prêt à commencer.</p>",
